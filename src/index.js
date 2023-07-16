@@ -12,7 +12,7 @@ hide(errorRef, selectEl);
 setTimeout(() => {
   fetchBreeds()
     .then(breeds => {
-      // Create and add breeds - <option> in select
+    
       markupBreeds(breeds);
     })
     .catch(error => {
@@ -28,6 +28,7 @@ selectEl.addEventListener('change', onSelected);
 
 function onSelected() {
   catInfo.style.display = 'none';
+  hide(errorRef);
 	show(loaderEl, loader);
 
   const breedId = selectEl.value;
